@@ -1,26 +1,96 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-foreground: #ffffff;
+  
+  --destructive: #ef4444;
+  --destructive-hover: #dc2626;
+  --destructive-foreground: #ffffff;
+  
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  
+  --status-todo-bg: #f1f5f9;
+  --status-todo-text: #475569;
+  --status-inprogress-bg: #dbeafe;
+  --status-inprogress-text: #1e40af;
+  --status-done-bg: #dcfce7;
+  --status-done-text: #166534;
+  
+  --priority-low-bg: #f3f4f6;
+  --priority-low-text: #374151;
+  --priority-medium-bg: #fef9c3;
+  --priority-medium-text: #854d0e;
+  --priority-high-bg: #fee2e2;
+  --priority-high-text: #991b1b;
+  
+  --radius: 0.75rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --font-sans: 'Inter', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme='dark'] {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --card-bg: #0f172a;
+  --card-border: #1e293b;
+  
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  
+  --status-todo-bg: #1e293b;
+  --status-todo-text: #94a3b8;
+  --status-inprogress-bg: #1e3a8a;
+  --status-inprogress-text: #bfdbfe;
+  --status-done-bg: #14532d;
+  --status-done-text: #bbf7d0;
+  
+  --priority-low-bg: #1f2937;
+  --priority-low-text: #d1d5db;
+  --priority-medium-bg: #713f12;
+  --priority-medium-text: #fef08a;
+  --priority-high-bg: #7f1d1d;
+  --priority-high-text: #fecaca;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
+  font-family: var(--font-sans);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+}
+
+/* Base interactive reset */
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
