@@ -1,4 +1,5 @@
 // import Image from "next/image";
+import TaskBoard from "./components/taskBoard/TaskBoard";
 import styles from "./page.module.css";
 
 
@@ -11,6 +12,7 @@ export default function Home() {
           Manage your tasks effectively with our beautiful board.
         </p>
       </div>
+      <TaskBoard />
     </div>
   );
 }
