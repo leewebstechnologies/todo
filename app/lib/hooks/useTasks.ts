@@ -4,30 +4,32 @@ import { useState, useEffect } from "react";
 import { Task } from "../types";
 
 export function useTasks() {
-  const [tasks, setTasks] = useState<Task[]>(() => {
-    if (typeof window === "undefined") {
-      return [];
-    }
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  useEffect(() => {
     try {
       const savedTasks = window.localStorage.getItem("tasks");
-      return savedTasks ? (JSON.parse(savedTasks) as Task[]) : [];
+      if (savedTasks) {
+        setTasks(JSON.parse(savedTasks) as Task[]);
+      }
     } catch (error) {
       console.error("Failed to parse tasks from local storage", error);
-      return [];
+    } finally {
+      setIsLoaded(true);
     }
-  });
+  }, []);
 
   // Save tasks whenever they change
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (isLoaded) {
       try {
         window.localStorage.setItem("tasks", JSON.stringify(tasks));
       } catch (error) {
         console.error("Failed to save tasks to local storage", error);
       }
     }
-  }, [tasks]);
+  }, [tasks, isLoaded]);
 
   // Add a new task
   const addTask = (task: Omit<Task, "id" | "createdAt">) => {
