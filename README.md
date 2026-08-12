@@ -35,4 +35,6 @@ This is a modern, responsive Todo application built to help users manage their d
 - **Authentication:** Skipped authentication as it was not explicitly requested, keeping the focus on the core todo functionality.
 
 ## Live Deployment (Optional)
-*N/A - Not deployed yet.*
+*Available - deployed on Vercel.*
+https://todo-gamma-rose-61.vercel.app
+https://github.com/leewebstechnologies/todo
