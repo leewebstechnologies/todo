@@ -1,9 +1,6 @@
 import { filterAndSortTasks } from "./utils";
 import { Task } from "./types";
 
-// A simple test script for our utility function
-// (Run with: npx tsx lib/utils.test.ts if tsx is installed, or adapt to vitest/jest)
-
 const mockTasks: Task[] = [
   {
     id: "1",
