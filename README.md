@@ -7,7 +7,7 @@ This is a modern, responsive Todo application built to help users manage their d
 - **Framework:** Next.js (App Router)
 - **Library:** React
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS
+- **Styling:** CSS Modules
 
 ## How to Run Locally
 
