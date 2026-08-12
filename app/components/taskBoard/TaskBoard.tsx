@@ -1,8 +1,5 @@
+"use client";
 import { Plus, Search, ClipboardList } from "lucide-react";
-// import { useTasks } from "@/lib/hooks/useTasks";
-// import { TaskCard } from "./TaskCard";
-// import { TaskModal } from "./TaskModal";
-// import { filterAndSortTasks } from "@/lib/utils";
 import styles from "./taskBoard.module.css";
 import { useTasks } from "@/app/lib/hooks/useTasks";
 import { useMemo, useState } from "react";
@@ -10,7 +7,6 @@ import { Task } from "@/app/lib/types";
 import { filterAndSortTasks } from "@/app/lib/utils";
 import TaskCard from "../taskCard/TaskCard";
 import TaskModal from "../taskModal/TaskModal";
-// import { Task } from "@/lib/types";
 
 const TaskBoard = () => {
    const { tasks, addTask, updateTask, deleteTask } = useTasks();

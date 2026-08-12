@@ -1,5 +1,5 @@
 import { Calendar, Edit2, Trash2 } from "lucide-react";
-import styles from "./TaskCard.module.css";
+import styles from "./taskCard.module.css";
 import { Task } from "@/app/lib/types";
 
 interface TaskCardProps {
